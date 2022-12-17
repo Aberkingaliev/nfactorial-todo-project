@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import BtnIcon from './components/BtnIcon';
+import Checkbox from './components/Checkbox';
+import Droplist from './components/Droplist';
+import Fab from './components/FAB';
+import Tabs from './components/Tabs/index';
+import TabsContext, { useTabContext } from './components/Tabs/TabsContext';
+import TasksHead from './components/TasksHead';
+import GlobalContextProvider from './GlobalContexts';
+import './index.css'
+import Popover from './components/Popover';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalContextProvider>
+        <TabsContext>
+            <div className="title">
+                <h1>Simple To Do List</h1>
+                <p className="body-m-16">
+                  Today is awesome day. The weather is awesome, you are awesome too!
+                </p>
+              </div>
+              <div className="tab-fab-container">
+                <Tabs />
+                <Fab>
+                  <Popover />
+                </Fab>
+              </div>
+              <TasksHead />
+              <Checkbox />
+          </TabsContext>
+      </GlobalContextProvider>
+    </>
   );
 }
 

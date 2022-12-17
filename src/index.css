@@ -1,13 +1,130 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  font-family: 'Inter', sans-serif !important;
+  background-color: #F1F1F1;
+  padding: 0px 80px 0px 80px;
+  margin: 0!important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+:root{
+  --accent-color: #712FFF;
+  --black-color: #151517;
+  --dark-color: #081E34;
+}
+
+input, textarea, select, button {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  font-family: 'Inter', sans-serif !important;
+  font-size: none;
+  font-weight: none;
+  line-height: none;
+}
+
+
+.title{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 100px;
+  margin-bottom: 102px;
+}
+
+h1, .body-m-16, .body-b-14, .body-m-14, .body-b-16, h3{
+  color: var(--black-color);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+h1{
+  font-size: 34px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+h3{
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.body-m-16{
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.body-b-16{
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.body-m-14{
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.body-b-14{
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.btn-dark{
+  background-color: var(--dark-color);
+  border-radius: 100px;
+  height: 40px;
+  width: fit-content;
+  padding: 12px 24px 12px 24px;
+  color: #fff;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-dark:hover{
+  opacity: 80%;
+}
+
+.btn-icon-small{
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+  padding: 1px;
+  align-items: center;
+  background-color: transparent;
+  transition: 300ms;
+}
+
+.btn-icon-small:hover{
+  background-color: #E4E6E7;
+}
+
+.btn-icon-small:active{
+  background-color: #cacdce;
+  border: 1px solid #bdc0c2;
+}
+
+.btn-icon-small:focus{
+  background-color: #d5d8d8;
+  border: 1px solid #bdc0c2;
+}
+
+.divider{
+  border: 1px solid #15151725;
+}
+
+.tab-fab-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
 }

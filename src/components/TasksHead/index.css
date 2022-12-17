@@ -1,0 +1,10 @@
+.task-head{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.task-list-container{
+    margin-top: 64px;
+    margin-bottom: 24px;
+}

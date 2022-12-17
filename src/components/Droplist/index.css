@@ -1,0 +1,47 @@
+.droplist-container{
+    display: none;
+    width: 240px;
+    height: fit-content;
+    padding: 12px 0px 12px 0px;
+    background-color: #E4E6E7;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    animation-name: droplistAppereance;
+    animation-duration: 300ms;
+    position: absolute;
+    z-index: auto;
+    margin-top: 24px;
+}
+
+.droplist-container.drop-active{
+    display: block;
+}
+
+
+.droplist-item{
+    display: flex;
+    width: initial;
+    height: 24px;
+    padding: 6px;
+    transition: 200ms;
+    cursor: pointer;
+    align-items: center;
+    gap: 16px;
+}
+
+.droplist-item:hover{
+    background-color: #d7dbdc;
+}
+
+
+@keyframes droplistAppereance {
+    0%{
+        margin-top: 50px;
+        opacity: 0%;
+    }
+    100%{
+        margin-top: 24px;
+        opacity: 100%;
+    }
+}
+

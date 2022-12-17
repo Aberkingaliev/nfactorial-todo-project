@@ -1,0 +1,24 @@
+.tab-nav{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.tab{
+    display: flex;
+    padding: 12px 24px 12px 24px;
+    background-color: #081E340D;
+    color: #081E34;
+    border-radius: 100px;
+    align-items: center;
+    cursor: pointer;
+}
+.tab:hover{
+    background-color: #081e3436;
+}
+
+.tab-active{
+    color: #fff;
+    font-weight: 700;
+    background-color: #081E346B;
+}
