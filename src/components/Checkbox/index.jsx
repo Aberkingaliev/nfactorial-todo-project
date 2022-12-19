@@ -15,7 +15,8 @@ const Checkbox = ({children}) => {
     const allTabContext = useTabContext()
     const { activeTab } = allTabContext
     
-    const [dropvisible, setDropVisible] = useState(false)
+    const [dropvisible, setDropVisible] = useState(null)
+    const [dropBoolean, setDropBoolean] = useState(true)
 
     switch(activeTab){
         case "To Do":
@@ -55,17 +56,16 @@ const Checkbox = ({children}) => {
 
     }
 
-    const handleIconClick = () => {
-        setDropVisible((lastState)=> !lastState)
-    
+    const handleIconClick = (taskid) => {
+        setDropVisible(taskid)
+        setDropBoolean((lastState) => !lastState)
     }
 
     const handleDropClick = ( event, taskid ) => {
-        // event.target.innerText.includes("Move to Trash")
         if (event.target.innerText.indexOf("Move To Trash") >= 0) {
             const task = tasksDatabase.find(task => task.id === taskid);
             if (task) {
-              task.status.isDone = task.status.isDone;
+              task.status.isDone = false;
               task.status.isTrash = true;
               task.status.isTodo = false;
             }
@@ -76,10 +76,16 @@ const Checkbox = ({children}) => {
               task.status.isTrash = false;
               task.status.isTodo = true;
             }
-          }
+          }  else if (event.target.innerText.indexOf("Delete Forever") >= 0) {
+            const taskIndex = tasksDatabase.findIndex(task => task.id === taskid);
+            
+            if (taskIndex<=0) {
+              tasksDatabase.splice(taskIndex, 1);
+            }
+        }        
           setTasksDataBase(tasksDatabase);
           setDropVisible(lastState => !lastState);
-        }          
+        }        
 
     
     
@@ -92,7 +98,7 @@ const Checkbox = ({children}) => {
                     <>
 
                         <div className="checkbox-container" key={task.id}>
-                                <BtnIcon handleClick={handleIconClick}/>
+                                <BtnIcon handleClick={()=>handleIconClick(task.id)}/>
                                 <input type={"checkbox"} 
                                     className={task.status.isDone ? "checkbox-m-checked" : "checkbox-m"} 
                                     onClick={(event)=>handleChangeChecked(task.id, event)}
@@ -100,7 +106,7 @@ const Checkbox = ({children}) => {
                                     />
                                 <label className={`body-m-16 ${task.status.isDone ? "check-value" : ""}`}>{task.content}</label>
                             </div>
-                            <Droplist visible={dropvisible} dropItemClick={(event)=>handleDropClick(event, task.id)}/>
+                            {dropvisible === task.id ? <Droplist dropBoolean={dropBoolean} dropItemClick={(event)=>handleDropClick(event, task.id)}/> : ""}
                     </>
                 )
             })}

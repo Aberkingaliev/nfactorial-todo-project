@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    position: relative;
 }
 
 .btn-icon-small{
@@ -17,6 +18,7 @@
     align-items: center;
     background-color: transparent;
     transition: 300ms;
+    
   }
   
   .btn-icon-small:hover{

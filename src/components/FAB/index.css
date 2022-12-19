@@ -18,7 +18,5 @@
     flex-direction: row;
     gap: 16px;
     align-items: flex-end;
-    position: absolute;
-    margin-bottom: 220px;
-    margin-left: 950px;
+    position: relative;
 }

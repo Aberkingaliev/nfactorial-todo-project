@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useTabContext } from "../Tabs/TabsContext";
 
 
-const Droplist = ({visible, dropItemClick}) => {
+const Droplist = ({dropBoolean, dropItemClick}) => {
     const allTabContext = useTabContext()
     const {activeTab, handleChangeTab} = allTabContext
     const [actionsList, setActionsList] = useState([
@@ -44,7 +44,7 @@ const Droplist = ({visible, dropItemClick}) => {
 
     return ( 
         <>
-            <div className={visible ? "droplist-container drop-active" : "droplist-container"} >
+            <div className={dropBoolean ? "droplist-container droplist-container-active" : "droplist-container"} >
             {filteredActionList.map((value)=>(
                 <div className="body-m-14 droplist-item" onClick={dropItemClick}>
                     <MaterialIcon icon={value.Icon} size="20px" color={"#353535"}/>

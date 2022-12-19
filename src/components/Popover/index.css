@@ -8,9 +8,10 @@
     width: fit-content;
     padding: 16px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    position: absolute;
+    right: 56px;
     animation-name: popoverAppereance;
     animation-duration: 300ms;
-    position: relative;
 }
 
 .popover-container-none{
@@ -23,6 +24,8 @@
     width: fit-content;
     padding: 16px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    position: absolute;
+    right: 56px;
     animation-name: popoverAppereance;
     animation-duration: 300ms;
 }
